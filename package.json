@@ -1,0 +1,27 @@
+{
+  "name": "cypress-brandalley",
+  "version": "1.0.0",
+  "description": "for automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sauravgiri10/Brandalley-automation.git"
+  },
+  "author": "saurav giri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sauravgiri10/Brandalley-automation/issues"
+  },
+  "homepage": "https://github.com/sauravgiri10/Brandalley-automation#readme",
+  "devDependencies": {
+    "cypress": "^14.3.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "cypress-real-events": "^1.14.0"
+  }
+}
