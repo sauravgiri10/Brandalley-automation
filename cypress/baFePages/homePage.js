@@ -154,7 +154,7 @@ clickOnFirstProductOfPlp(){
     cy.xpath(this.weblocators.flashSaleName).click()
     cy.wait(5000)
     cy.xpath(this.weblocators.firstProductLink).click()
-    cy.wait(10000)
+    cy.wait(5000)
 
 }
 
@@ -255,7 +255,7 @@ verifyProductNameOnPdp(){
 
     clickOnProceedToPayment(){
         cy.xpath(this.weblocators.proceedToPaymentBtn).click()
-        cy.wait(10000)
+        cy.wait(15000)
         
     }
 

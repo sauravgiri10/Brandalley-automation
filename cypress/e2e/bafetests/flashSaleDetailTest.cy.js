@@ -18,11 +18,11 @@ describe (' Flash sale detail testing ', ()=>{
             loginObj.successfullLoginCheck()
          })
     
-         afterEach(' Logout after each test ',()=>{
-            loginObj.clickOnLogoutButton()
-            loginObj.successfullLogoutCheck()
+         // afterEach(' Logout after each test ',()=>{
+         //    loginObj.clickOnLogoutButton()
+         //    loginObj.successfullLogoutCheck()
     
-         })
+         // })
 
 
     // it(' Verify flash sale name of fisrt flash sale showing on home page ', ()=>{
