@@ -30,7 +30,14 @@ module.exports = defineConfig({
   },
   env: {
     URL: 'https://m2-staging.brandalley.co.uk/'
-  }
+  },
+  video: true,
+  videosFolder: 'cypress/videos',
+  screenshotOnRunFailure: true, // optional: also save screenshots
+  screenshotsFolder: 'cypress/screenshots', // optional
+
 });
+
+
 
 

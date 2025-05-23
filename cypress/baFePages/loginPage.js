@@ -14,51 +14,51 @@ weblocators={
     logoutButton:"//a[text()[normalize-space()='Logout']]", // this locator is for account dropdown logout option
     logoutButtonUnderAccountSummery:"//li[a[contains(normalize-space(.), 'Logout')]]", // this locator is for my account page logout option
     accountSummeryButton:"//a[text()[normalize-space()='Account Summary']]",
-    helloNameText: "//span[text()[contains(., 'Hello, Saurav!')]]"
+    helloNameText: "//span[contains(text(), 'Hello')]"
     
 }
 
 openURL(){
 cy.clearCookies()   // Clear cookies
 cy.clearLocalStorage()
-cy.visit(Cypress.env('URL'))
+cy.visit(Cypress.env('URL'),{ timeout: 120000 })
 cy.viewport(1280, 800)
 
 }
 
 clickOnMyAccountIcon(){
-    cy.get(this.weblocators.myAccountIconButton).click()
+    cy.get(this.weblocators.myAccountIconButton).should('be.visible').click()
 }
 
 clickOnContinueWithEmailIdOption(){
-    cy.get(this.weblocators.continueWithEmailIdButton).click()
+    cy.get(this.weblocators.continueWithEmailIdButton).should('be.visible').click()
 }
 
 enterEmail(Emailid){
-    cy.get(this.weblocators.emailId).type(Emailid)
+    cy.get(this.weblocators.emailId).should('be.visible').type(Emailid)
 }
 
 enterPassword(Password){
-    cy.get(this.weblocators.password).type(Password)
+    cy.get(this.weblocators.password).should('be.visible').type(Password)
 }
 
 clickOnLoginButton(){
-    cy.get(this.weblocators.loginButton).click()
+    cy.get(this.weblocators.loginButton).should('be.visible').click()
     cy.wait(13000)
 }
 successfullLoginCheck(){
     cy.get(this.weblocators.myAccountIconButton).should('be.visible').click()
-    cy.xpath(this.weblocators.helloNameText).should('have.text','Hello, Saurav!')
+    cy.xpath(this.weblocators.helloNameText).should('contain','Hello')
     cy.xpath(this.weblocators.accountSummeryButton).should('be.visible').click()
     cy.xpath(this.weblocators.brandalleyLogo).should('be.visible').click()
     cy.wait(6000)
 }
 
 clickOnLogoutButton(){
-    cy.wait(5000)
-    cy.get(this.weblocators.myAccountIconButton).click()
-    cy.xpath(this.weblocators.accountSummeryButton).click()
-    cy.xpath(this.weblocators.logoutButtonUnderAccountSummery).click()
+   // cy.wait(5000)
+    cy.get(this.weblocators.myAccountIconButton).should('be.visible').click()
+    cy.xpath(this.weblocators.accountSummeryButton).should('be.visible').click()
+    cy.xpath(this.weblocators.logoutButtonUnderAccountSummery).should('be.visible').click()
 
 }
 

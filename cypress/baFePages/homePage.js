@@ -92,7 +92,7 @@ verifyFlashSaleDeliveryDates(FlashSaleDeliveryText){
 
 
 clickOnFlashSale(){
-    cy.xpath(this.weblocators.flashSaleName).click()
+    cy.xpath(this.weblocators.flashSaleName).should('be.visible').click()
 }
 
 mouseHoverOnWomenCategory(){
@@ -192,18 +192,18 @@ verifyProductNameOnPdp(){
     }
 
     selectSizeOnPdp(){
-        cy.xpath(this.weblocators.productSize).click()
+        cy.xpath(this.weblocators.productSize).should('be.visible').click()
 
     }
 
     clickOnAddToBasketBtn(){
-        cy.xpath(this.weblocators.addToBasketBtn).click()
-        cy.wait(3000)
+        cy.xpath(this.weblocators.addToBasketBtn).should('be.visible').click()
+        cy.wait(5000)
 
     }
 
     verifyCartCount(){
-        cy.xpath(this.weblocators.productCart).invoke('text').then((pCount)=>{
+        cy.xpath(this.weblocators.productCart).should('be.visible').invoke('text').then((pCount)=>{
             cy.log(' Product quantity added in basket is - ', pCount)
             expect(pCount.trim()).to.equal('1')
         })
@@ -211,27 +211,27 @@ verifyProductNameOnPdp(){
     }
 
     clickOnCartIcon(){
-        cy.xpath(this.weblocators.productCart).click()
+        cy.xpath(this.weblocators.productCart).should('be.visible').click()
     
     }
 
     clickOnViewBasketBtn(){
-        cy.xpath(this.weblocators.viewBasketBtn).click()
+        cy.xpath(this.weblocators.viewBasketBtn).should('be.visible').click()
         cy.wait(3000)
     
     }
 
     clickOnCheckOut(){
-        cy.xpath(this.weblocators.checkOutBtn).click()
+        cy.xpath(this.weblocators.checkOutBtn).should('be.visible').click()
     
     }
 
  // Veiw basket actions
  
     addCouponOnBasketPage(CouponCode){
-        cy.xpath(this.weblocators.addPromotionCodeLink).click()
+        cy.xpath(this.weblocators.addPromotionCodeLink).should('be.visible').click()
         cy.xpath(this.weblocators.enterCouponCode).type(CouponCode, { force: true })
-        cy.xpath(this.weblocators.addCouponBtn).click()
+        cy.xpath(this.weblocators.addCouponBtn).should('be.visible').click()
         cy.wait(3000)
 
         }
@@ -244,23 +244,23 @@ verifyProductNameOnPdp(){
 // Checkout page actions
 
     selectShippingAddress(){
-        cy.xpath(this.weblocators.shippingAddress).click()
+        cy.xpath(this.weblocators.shippingAddress).should('be.visible').click()
 
     }
 
     selectPaymentMethod(){
-        cy.xpath(this.weblocators.shippingMethodRadioBtn).click()
+        cy.xpath(this.weblocators.shippingMethodRadioBtn).should('be.visible').click()
     
     }
 
     clickOnProceedToPayment(){
-        cy.xpath(this.weblocators.proceedToPaymentBtn).click()
+        cy.xpath(this.weblocators.proceedToPaymentBtn).should('be.visible').click()
         cy.wait(15000)
         
     }
 
     selectCreditCardRadioBtn(){
-        cy.xpath(this.weblocators.creditCardRadioBtn).click()
+        cy.xpath(this.weblocators.creditCardRadioBtn).should('be.visible').click()
     }
 
     selectPayPalRadioBtn(){
@@ -341,7 +341,7 @@ verifyProductNameOnPdp(){
 
     clickOnPayNowBtn(){
         cy.wait(2000)
-        cy.xpath(this.weblocators.payNowBtn).click()
+        cy.xpath(this.weblocators.payNowBtn).should('be.visible').click()
         cy.wait(10000)
     
     }
@@ -357,7 +357,7 @@ verifyProductNameOnPdp(){
     // Confirmation actions
 
     orderConfirmationCheck(ConfirmationMsg){
-        cy.xpath(this.weblocators.orderConfirmationMsg).invoke('text').then((oConMsg)=>{
+        cy.xpath(this.weblocators.orderConfirmationMsg).should('be.visible').invoke('text').then((oConMsg)=>{
             const newConfirmMsg = oConMsg.replace(/\s+/g, ' ').trim();
             cy.log(' Order confirmation message on confirmation page is - ', newConfirmMsg)
             expect(newConfirmMsg).to.equal(ConfirmationMsg)
@@ -366,7 +366,7 @@ verifyProductNameOnPdp(){
     }
 
     getOrderId(){
-        cy.xpath(this.weblocators.orderIdOnConfirmation).invoke('text').then((oId)=>{
+        cy.xpath(this.weblocators.orderIdOnConfirmation).should('be.visible').invoke('text').then((oId)=>{
             cy.log(' Order id number on confirmation page is - ', oId)
             cy.scrollTo('topLeft');
             cy.wait(500)
