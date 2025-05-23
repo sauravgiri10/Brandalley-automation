@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # or your required version
+          node-version: '18'
 
       - name: Install dependencies
         run: npm install
@@ -23,3 +23,17 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run
+
+      - name: Upload Cypress videos
+        if: always()  # Always run even if tests fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: cypress/videos
+
+      - name: Upload Cypress screenshots (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
