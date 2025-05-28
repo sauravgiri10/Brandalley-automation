@@ -5,7 +5,7 @@ const  homeObj= new homePage()
 const loginObj = new loginPage()
 
 
-describe (' Flash sale detail testing ', ()=>{
+describe (' Order workflow from FLASH SALE & WOMEN-->CLOTHING ', ()=>{
 
 
     beforeEach(' Login before each test ',()=>{
@@ -18,11 +18,11 @@ describe (' Flash sale detail testing ', ()=>{
             loginObj.successfullLoginCheck()
          })
     
-         // afterEach(' Logout after each test ',()=>{
-         //    loginObj.clickOnLogoutButton()
-         //    loginObj.successfullLogoutCheck()
+         afterEach(' Logout after each test ',()=>{
+            loginObj.clickOnLogoutButton()
+            loginObj.successfullLogoutCheck()
     
-         // })
+         })
 
 
     // it(' Verify flash sale name of fisrt flash sale showing on home page ', ()=>{
@@ -90,7 +90,7 @@ describe (' Flash sale detail testing ', ()=>{
 
     // })
 
-    it(' Click on view basket, add coupon code and click on proceed to checkout button ', ()=>{
+    it(' Workflow to place order from flash sale products ', ()=>{
         homeObj.clickOnFirstProductOfPlp()
         homeObj.selectSizeOnPdp()
         homeObj.clickOnAddToBasketBtn()
@@ -99,49 +99,39 @@ describe (' Flash sale detail testing ', ()=>{
         homeObj.clickOnViewBasketBtn()
         homeObj.addCouponOnBasketPage(login.CouponCode)
         homeObj.proceedToCheckOut()
-       // homeObj.selectShippingAddress()
         homeObj.selectPaymentMethod()
         homeObj.clickOnProceedToPayment()
-       // homeObj.selectCreditCardRadioBtn()
-       // homeObj.selectPayPalRadioBtn()
         homeObj.enterCreditCardNumber(login.CCNumber)
-      homeObj.enterExpiryDate(login.ExDate)
-      homeObj.enterCvcNumber(login.CvcNumber)
-       homeObj.clickOnPayNowBtn()
-      // homeObj.clickOnAuthPaymentBtn()
-       //homeObj.clickOn3DSCompleteBtn()
-       homeObj.orderConfirmationCheck(login.ConfirmationMsg)
-       homeObj.getOrderId()
+        homeObj.enterExpiryDate(login.ExDate)
+        homeObj.enterCvcNumber(login.CvcNumber)
+        homeObj.clickOnPayNowBtn()
+        homeObj.orderConfirmationCheck(login.ConfirmationMsg)
+        homeObj.getOrderId()
 
     })
 
 
-    // it(' Click on clothing sub cate, add coupon code and click on proceed to checkout button ', ()=>{
-    //     homeObj.mouseHoverOnWomenCategory()
-    //     homeObj.clickOnWomenClothingSubCate()
-    //     homeObj.clickOnWomenCateProduct()
-    //     homeObj.selectSizeOnPdp()
-    //     homeObj.clickOnAddToBasketBtn()
-    //     homeObj.verifyCartCount()
-    //     homeObj.clickOnCartIcon()
-    //     homeObj.clickOnViewBasketBtn()
-    //     homeObj.addCouponOnBasketPage(login.CouponCode)
-    //     homeObj.proceedToCheckOut()
-    //    // homeObj.selectShippingAddress()
-    //     homeObj.selectPaymentMethod()
-    //     homeObj.clickOnProceedToPayment()
-    //    // homeObj.selectCreditCardRadioBtn()
-    //    // homeObj.selectPayPalRadioBtn()
-    //     homeObj.enterCreditCardNumber(login.CCNumber)
-    //   homeObj.enterExpiryDate(login.ExDate)
-    //   homeObj.enterCvcNumber(login.CvcNumber)
-    //    homeObj.clickOnPayNowBtn()
-    //   // homeObj.clickOnAuthPaymentBtn()
-    //    //homeObj.clickOn3DSCompleteBtn()
-    //    homeObj.orderConfirmationCheck(login.ConfirmationMsg)
-    //    homeObj.getOrderId()
+    it(' Workflow to place order from WOMEN-->CLOTHING products ', ()=>{
+        homeObj.mouseHoverOnWomenCategory()
+        homeObj.clickOnWomenClothingSubCate()
+        homeObj.clickOnWomenCateProduct()
+        homeObj.selectSizeOnPdp()
+        homeObj.clickOnAddToBasketBtn()
+        homeObj.verifyCartCount()
+        homeObj.clickOnCartIcon()
+        homeObj.clickOnViewBasketBtn()
+        homeObj.addCouponOnBasketPage(login.CouponCode)
+        homeObj.proceedToCheckOut()
+        homeObj.selectPaymentMethod()
+        homeObj.clickOnProceedToPayment()
+        homeObj.enterCreditCardNumber(login.CCNumber)
+        homeObj.enterExpiryDate(login.ExDate)
+        homeObj.enterCvcNumber(login.CvcNumber)
+        homeObj.clickOnPayNowBtn()
+        homeObj.orderConfirmationCheck(login.ConfirmationMsg)
+        homeObj.getOrderId()
 
-    // })
+    })
 
 
 

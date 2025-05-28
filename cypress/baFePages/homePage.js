@@ -102,12 +102,13 @@ mouseHoverOnWomenCategory(){
 }
 
 clickOnWomenClothingSubCate(){
-     cy.xpath(this.weblocators.womenCategoryClothing).contains('Clothing').click()
+     cy.xpath(this.weblocators.womenCategoryClothing).should('be.visible').contains('Clothing').click()
      
  }
 
  clickOnWomenCateProduct(){
-    cy.xpath(this.weblocators.productLinkOfWomenCate).click()
+    //cy.xpath(this.weblocators.productLinkOfWomenCate).click()
+    cy.xpath(this.weblocators.firstProductLink).should('be.visible').click()
  }
 
 

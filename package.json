@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/sauravgiri10/Brandalley-automation#readme",
   "devDependencies": {
-    "cypress": "^14.3.0",
+    "cypress": "^14.4.0",
     "cypress-iframe": "^1.0.1",
     "cypress-xpath": "^2.0.1"
   },
